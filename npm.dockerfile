@@ -1,9 +1,14 @@
-FROM circleci/node:8.10
+FROM node:8.10
 
-RUN sudo mkdir /source
+USER root
+
+RUN mkdir /source /root/.ssh
 
 WORKDIR /source
 
-RUN sudo npm i -g npm@6.0.1
+RUN npm i -g npm@6.0.1
 
-USER root
+USER node
+
+VOLUME /source
+VOLUME /root/.ssh
