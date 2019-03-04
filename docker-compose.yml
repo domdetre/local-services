@@ -1,0 +1,18 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:9.6
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: testuser
+      POSTGRES_PASSWORD: testpassword
+      POSTGRES_DB: testdb
+    volumes:
+      - ./.tmp/pg-data:/var/lib/postgresql
+
+  npm:
+    build:
+      context: .
+      dockerfile: npm.dockerfile
+    image: dfd/npm
