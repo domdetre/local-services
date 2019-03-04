@@ -15,4 +15,4 @@ services:
     build:
       context: .
       dockerfile: npm.dockerfile
-    image: dfd/npm
+    image: local/npm

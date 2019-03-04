@@ -1,0 +1,2 @@
+alias dnpm='docker run --rm -ti -v `pwd`:/source local/npm:latest npm'
+alias docker-npm='docker run --rm -ti -v `pwd`:/source local/npm:latest'
